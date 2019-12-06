@@ -7,22 +7,22 @@
 </head>
 <body>
 
-<div class="topnav">
-  <a href="webPage.html">Home</a>
-  <a href="show_item.php">My Items</a>
-  <a href="#bio">Bio</a>
-  <a class="active" href="show-cart.php">Cart</a>
-  <div class="search-container">
-    <form action="search_item.php">
-      <input type="text" class="form-control" id="searchterm" name="searchterm" />
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</div>
+    <div class="topnav">
+            <a href="home.php">Home</a>
+            <a href="addItem.html">Add item</a>
+            <a href="show_item.php">Items</a>
+            <a class="active" href="show-cart.php">Cart</a>
+            <div class="search-container">
+              <form action="search_item.php">
+                <input type="text" class="form-control" id="searchterm" name="searchterm" />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
     
 <?php
 
-    $itemID=$_POST["itemID"];
+    $itemID="";
     $itemName=$_POST["itemName"];
     $itemPrice=$_POST["itemPrice"];
     $itemDes=$_POST["itemDes"];
@@ -32,7 +32,7 @@
         exit;
     }
 
-    $itemID = addslashes($itemID);
+
     $itemName = addslashes($itemName);
     $itemPrice = addslashes($itemPrice);
     $itemDes = addslashes($itemDes);
@@ -55,15 +55,15 @@
     $stmt = $db->prepare($query);
     $stmt->bind_param("isds", $itemID, $itemName, $itemPrice, $itemDes);
     $stmt->execute();
-    
     echo $stmt->affected_rows," Item has been added!";
+    
     
     $db->close();
 ?>
  
  <a href="show_item.php">Show Item</a>
 
-<form action="upload.php" method="post" enctype='multipart/form-data'>
+ <form action="upload.php" method="post" enctype='multipart/form-data'>
     <p>Item ID: <input type="number" name="itemID" maxlength="13" size="13" /></p>
     <p>Item Image: <input type="file" name="itemImage" /></p>
 

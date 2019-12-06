@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,19 @@
 <body>
 
 <div class="topnav">
-  <a href="webPage.html">Home</a>
-  <a class="active" href="show_item.php">My Items</a>
-  <a href="#bio">Bio</a>
-  <a href="show-cart.php">Cart</a>
+<a href="home.php">Home</a>
+  <a href="addItem.html">Add item</a>
+  <a href="show_item.php">Items</a>
+  <a class="active" href="show-cart.php">Cart</a>
   <div class="search-container">
-    <form action="search_item.php" method="get">
-        
-      <input type="text" name="searchterm" />
+    <form action="search_item.php">
+      <input type="text" class="form-control" id="searchterm" name="searchterm" />
       <button type="submit"><i class="fa fa-search"></i></button>
-
     </form>
   </div>
 </div>
+
+
 <body>
     <main role="main" class="container-fluid">
     <h1> Items Search </h1>

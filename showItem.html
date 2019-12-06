@@ -8,7 +8,9 @@
 <body>
 
     <div class="topnav">
-        <a href="webPage.html">Home</a>
+        <a href="home.php">Home</a>
+        <a href="show_item.php">My Items</a>
+        <a class="active" href="show-cart.php">Cart</a>
         <a href="user.html">Create User</a>
         <a href="login.php">Login</a>
         <div class="search-container">
@@ -18,7 +20,14 @@
           </form>
         </div>
       </div>
-<P>Welcome to the market place app. Please sign in or create an account.</P>
+
+<form action="add_item.php" method="post">
+    <p>Item: <input type="text" name="itemName" maxlength="30" size="30" /></p>
+    <p>Item Price: <input type="number" step="any" name="itemPrice" maxlength="3" size="30" /></p>
+    <p>Item Description: <input type="text" name="itemDes" maxlength="60" size="30" /></p>
+    
+    <input type="submit" name="submit" value="Add Item" />
+</form>
 
 </body>
 </html>

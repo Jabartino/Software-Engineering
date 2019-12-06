@@ -19,25 +19,15 @@
               </form>
             </div>
           </div>
+          
 
+<form action="add_item.php" method="post">
+    <p>Item: <input type="text" name="itemName" maxlength="30" size="30" /></p>
+    <p>Item Price: <input type="number" step="any" name="itemPrice" maxlength="3" size="30" /></p>
+    <p>Item Description: <input type="text" name="itemDes" maxlength="60" size="30" /></p>
+    
+    <input type="submit" name="submit" value="Add Item" />
+</form>
 
-<?php
-
-session_start();
-
-if (empty($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-
-array_push($_SESSION['cart'], $_GET['itemID']);
-
-?>
-
-<p>
-
-    Product added to cart 
-    <br>
-    <a href="show_item.php"> Add more items
-    <br>
-    <a href="show-cart.php"> View Cart
-</p>
+</body>
+</html>
