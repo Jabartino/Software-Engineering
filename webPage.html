@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="webPage.html">Home</a>
+  <a href="show_item.php">My Items</a>
+  <a href="#bio">Bio</a>
+  <a href="show-cart.php">Cart</a>
+  <div class="search-container">
+    <form action="search_item.php">
+      <input type="text" class="form-control" id="searchterm" name="searchterm" />
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<form action="add_item.php" method="post">
+    <p>Item ID (leave empty for auto increment): <input type="number" name="itemID" maxlength="13" size="13" /></p>
+    <p>Item: <input type="text" name="itemName" maxlength="30" size="30" /></p>
+    <p>Item Price: <input type="number" step="any" name="itemPrice" maxlength="3" size="30" /></p>
+    <p>Item Description: <input type="text" name="itemDes" maxlength="60" size="30" /></p>
+    
+    <input type="submit" name="submit" value="Add Item" />
+</form>
+
+</body>
+</html>
