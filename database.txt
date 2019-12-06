@@ -1,0 +1,49 @@
+drop DATABASE IF EXISTS market;
+
+CREATE DATABASE market;
+
+use market;
+
+drop table if EXISTS items;
+CREATE TABLE Items(
+    itemID INT NOT NULL AUTO_INCREMENT,
+    itemName VARCHAR(256),
+    itemPrice FLOAT(6,2),
+    itemDes VARCHAR(300),
+    PRIMARY KEY (itemID)
+);
+
+INSERT INTO Items(itemName, itemPrice, itemDes) VALUES
+('Pen', '20', 'An elegant pen'),
+('Shirt','30', 'A red shirt with black font'),
+('Hoodie','40', 'A warm hoodie'),
+('Jeans','15', 'A pair of black jeans'),
+('Boots', '50', 'A pair of brown leather boots');
+
+
+drop table if EXISTS user;
+CREATE TABLE user(
+    userID INT NOT NULL AUTO_INCREMENT,
+    uName VARCHAR(256),
+    fName VARCHAR(256),
+    lName VARCHAR(256),
+    pass VARCHAR(256),
+    PRIMARY KEY (userID)
+);
+
+
+
+INSERT INTO user(uName, fName, lName, pass) VALUES
+('admin', 'matt', 'piv', '$2y$10$EVahB/kwaEPxFZlRK9hlJ.7mmeklGdrP3uq0fCLZyipeR6DbojGOe');
+
+
+
+drop table if EXISTS order;
+create table order(
+    orderID INT NOT NULL AUTO_INCREMENT,
+    uName VARCHAR(256),
+    amount FLOAT(8,2),
+    PRIMARY KEY (orderID)
+
+);
+

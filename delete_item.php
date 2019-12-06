@@ -8,9 +8,9 @@
 <body>
 
 <div class="topnav">
-  <a href="webPage.html">Home</a>
-  <a href="show_item.php">My Items</a>
-  <a href="#bio">Bio</a>
+<a href="home.php">Home</a>
+  <a href="addItem.html">Add item</a>
+  <a href="show_item.php">Items</a>
   <a class="active" href="show-cart.php">Cart</a>
   <div class="search-container">
     <form action="search_item.php">
@@ -19,6 +19,7 @@
     </form>
   </div>
 </div>
+
 
 <?php
     $itemID=$_GET["itemID"];
@@ -30,11 +31,11 @@
         die('Connect Error ' . $db->connect_errno . ': ' . $db->connect_error);
     }
 
-    $query = "DELETE FROM items WHERE itemID={$_GET['itemID']}";
+    $query = "Delete FROM items WHERE itemID=?";
     $stmt = $db->prepare($query);
+    $stmt->bind_param("i", $itemID);
     $stmt->execute();
-
-    echo " Item deleted from the market";
+    echo $stmt->affected_rows." Item deleted from the market";
 
     $db->close();
 ?>
